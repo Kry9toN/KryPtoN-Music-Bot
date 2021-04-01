@@ -7,6 +7,10 @@ Install package required
 ```
 pip install -r requirements.txt
 ```
+Setup config
+```
+rename configs_sample.py to configs.py and edit
+```
 Run
 ```
 python3 -m krypton
