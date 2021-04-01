@@ -1,0 +1,4 @@
+ffmpeg-python
+pyrogram
+pytgcalls
+youtube_dl

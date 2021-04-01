@@ -1,0 +1,5 @@
+*.log
+*.raw
+*.png
+krypton/__pycache__
+*session*
