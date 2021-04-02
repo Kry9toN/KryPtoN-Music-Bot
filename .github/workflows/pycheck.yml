@@ -1,4 +1,4 @@
-name: Pylint
+name: PyCheck
 
 on: [push]
 
@@ -15,8 +15,10 @@ jobs:
         python-version: 3.8
     - name: Install dependencies
       run: |
+        sudo apt-get install ffmpeg
         python -m pip install --upgrade pip
-        pip install pylint
+        pip install -r requirements.txt
+        pip install flake8 flake8-print flake8-quotes
     - name: Analysing the code with pylint
       run: |
-        pylint `ls -R|grep .py$|xargs`
+        flake8 . --count --select=E999 --show-source --statistics
