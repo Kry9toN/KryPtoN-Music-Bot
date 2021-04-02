@@ -2,4 +2,4 @@
 *.raw
 .*.png
 krypton/__pycache__
-*session*
+krypton/*session*
