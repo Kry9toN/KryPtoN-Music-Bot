@@ -3,7 +3,7 @@ import os
 import time
 import youtube_dl
 
-from pyrogram import Client, filters, types
+from pyrogram import Client, filters
 from pyrogram.types import Message
 from pytgcalls import GroupCall
 from Python_ARQ import ARQ
@@ -54,15 +54,15 @@ async def start(_, message):
     await message.reply_text(START_TEXT)
 
 @app.on_message(filters.text & cmd_filter('help'))
-async def start(_, message):
+async def help(_, message):
     await message.reply_text(HELP_TEXT)
 
 @app.on_message(filters.text & cmd_filter('repo'))
-async def start(_, message):
+async def repo(_, message):
     await message.reply_text(REPO_TEXT)
 
 @app.on_message(filters.text & cmd_filter('donation'))
-async def start(_, message):
+async def donation(_, message):
     await message.reply_text(DONATION_TEXT)
 
 @app.on_message(filters.text & cmd_filter('join'))
