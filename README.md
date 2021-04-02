@@ -1,5 +1,8 @@
 # KryPtoN Music Bot
 
+[![Actions Badge](https://img.shields.io/github/workflow/status/Kry9toN/KryPtoN-Music-Bot/PyCheck/master?label=Build&style=flat-square&logo=github-actions&logoColor=white&color=98CE00)](https://github.com/Kry9toN/KryPtoN-Music-Bot/actions)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/6275e97d871b45458235492edfa77745)](https://www.codacy.com/gh/Kry9toN/KryPtoN-Music-Bot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Kry9toN/KryPtoN-Music-Bot&amp;utm_campaign=Badge_Grade)
+
 Music on Voice Calls Telegram
 
 # Support
