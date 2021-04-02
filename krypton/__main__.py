@@ -84,6 +84,7 @@ async def join(_, message):
 @app.on_message(filters.text & cmd_filter('stop'))
 async def join(_, message):
     await group_call.stop_playout()
+    playing = False
     await message.reply_text('Succsessfully stopped song!')
 
 @app.on_message(filters.text & cmd_filter('leave'))
