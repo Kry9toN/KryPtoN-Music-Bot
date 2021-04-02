@@ -40,7 +40,7 @@ if not HEROKU:
 else:
     app = Client(SESSION_STRING, api_id=api_id, api_hash=api_hash)
 
-group_calls = GroupCall(app, input_filename='input.raw')
+group_calls = GroupCall(app, input_filename='input.raw', play_on_repeat=True)
 cmd_filter = lambda cmd: filters.command(cmd, prefixes='/')
 
 # Arq Client
