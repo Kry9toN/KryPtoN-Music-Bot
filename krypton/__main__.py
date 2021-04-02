@@ -72,24 +72,35 @@ async def join(_, message):
     await message.reply_text('Succsessfully joined!')
 
 @app.on_message(filters.text & cmd_filter('mute'))
-async def join(_, message):
+async def mute(_, message):
     group_calls.set_is_mute(True)
     await message.reply_text('Succsessfully muted bot!')
 
 @app.on_message(filters.text & cmd_filter('unmute'))
-async def join(_, message):
+async def unmute(_, message):
     group_calls.set_is_mute(False)
     await message.reply_text('Succsessfully unmuted bot!')
 
+@app.on_message(filters.text & cmd_filter('volume'))
+async def volume(_, message):
+    if len(message.command) < 2:
+        await message.reply_text('You forgot to pass volume (1-200)')
+
+    await group_call.set_my_volume(message.command[1])
+    await message.reply_text(f'Volume changed to {message.command[1]}')
+
 @app.on_message(filters.text & cmd_filter('stop'))
-async def join(_, message):
+async def stop(_, message):
     group_calls.stop_playout()
     playing = False
+    os.remove('input.raw')
     await message.reply_text('Succsessfully stopped song!')
 
 @app.on_message(filters.text & cmd_filter('leave'))
 async def leave(_, message):
     await group_calls.stop()
+    playing = False
+    os.remove('input.raw')
     await message.reply_text('Succsessfully leaved!')
 
 @app.on_message(filters.text & cmd_filter('kill'))
