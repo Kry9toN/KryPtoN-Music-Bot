@@ -36,8 +36,10 @@ $ python3 -m krypton
 ### Generate String session [IMPORTANT]
 Download this file [generate_string_session.py](https://raw.githubusercontent.com/Kry9toN/KryPtoN-Music-Bot/master/generate_string_session.py)
 
+```
 $ pip3 install pyrogram TgCrypto
 $ python3 generate_string_session.py
+```
 You will get a session string, copy it, Then use heroku commands to push to heroku
 
 ## Commands
@@ -62,4 +64,5 @@ Command | Description
 
 # Credit
 [@MarshalX](https://github.com/MarshalX)
+
 [@thehamkercat](https://github.com/thehamkercat)
