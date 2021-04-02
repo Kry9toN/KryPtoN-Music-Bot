@@ -1,4 +1,8 @@
+aiofiles
 ffmpeg-python
-pyrogram
+Pillow
 pytgcalls
+python-arq
+Pyrogram
+TgCrypto
 youtube_dl

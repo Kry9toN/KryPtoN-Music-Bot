@@ -1,12 +1,12 @@
 import asyncio
 import os
 import time
-from Python_ARQ import ARQ
 import youtube_dl
 
 from pyrogram import Client, filters, types
 from pyrogram.types import Message
 from pytgcalls import GroupCall
+from Python_ARQ import ARQ
 
 from .functions import (
     transcode,
@@ -114,7 +114,6 @@ async def skip(_, message):
     await message.reply_text("__**Skipped!**__")
     await play()
 
-
 @app.on_message(filters.text & cmd_filter('queue'))
 async def queue_list(_, message):
     if len(queue) != 0:
@@ -128,7 +127,6 @@ async def queue_list(_, message):
         await message.reply_text("__**Queue Is Empty, Just Like Your Life.**__")
 
 # Queue handler
-
 
 async def play():
     global queue, playing
@@ -171,7 +169,6 @@ async def play():
 
 
 # Deezer----------------------------------------------------------------------------------------
-
 
 async def deezer(requested_by, query):
     global playing
@@ -288,5 +285,5 @@ async def send(text):
     m = await app.send_message(sudo_chat_id, text=text, disable_web_page_preview=True)
     return m
 
-print('[INFO] Bot is running...')
+print('[INFO] Bot is running...\n')
 app.run()
