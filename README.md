@@ -22,7 +22,7 @@ $ cd KryPtoN-Music-Bot
 $ pip install -r requirements.txt
 ```
 Setup config
-rename configs_sample.py to configs.py and edit
+configs.py and edit
 
 Execute!
 ```
