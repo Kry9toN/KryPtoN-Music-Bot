@@ -86,7 +86,7 @@ async def volume(_, message):
     if len(message.command) < 2:
         await message.reply_text('You forgot to pass volume (1-200)')
 
-    await group_call.set_my_volume(message.command[1])
+    await group_calls.set_my_volume(message.command[1])
     await message.reply_text(f'Volume changed to {message.command[1]}')
 
 @app.on_message(filters.text & cmd_filter('stop'))
