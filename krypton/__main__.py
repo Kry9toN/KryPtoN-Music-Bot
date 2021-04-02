@@ -68,7 +68,6 @@ async def donation(_, message):
 @app.on_message(filters.text & cmd_filter('join'))
 async def join(_, message):
     await group_calls.start(message.chat.id)
-    group_calls.set_is_mute(False)
     await message.reply_text('Succsessfully joined!')
 
 @app.on_message(filters.text & cmd_filter('mute'))
@@ -93,14 +92,12 @@ async def volume(_, message):
 async def stop(_, message):
     group_calls.stop_playout()
     playing = False
-    os.remove('input.raw')
     await message.reply_text('Succsessfully stopped song!')
 
 @app.on_message(filters.text & cmd_filter('leave'))
 async def leave(_, message):
     await group_calls.stop()
     playing = False
-    os.remove('input.raw')
     await message.reply_text('Succsessfully leaved!')
 
 @app.on_message(filters.text & cmd_filter('kill'))
