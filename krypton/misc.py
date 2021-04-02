@@ -12,4 +12,4 @@ START_TEXT = "__**Hi I'm KryPtoN Music Bot. I will sing for you on Voice Call Te
 REPO_TEXT = "[Github](https://github.com/Kry9toN/KryPtoN-Music-Bot)"
 
 DONATION_TEXT = "[Saweria](https://saweria.co/donate/Kry9toN)" \
-    + "| [Paypal](https://www.paypal.me/KomodoOS)"
+    + " | [Paypal](https://www.paypal.me/KomodoOS)"
