@@ -11,6 +11,7 @@
       "callsmusic"
     ],
     "repository": "https://github.com/vincreator/KryPtoN-Music-Bot",
+    "stack": "container",
     "env": {
       "SESSION_STRING": {
         "description": "A Pyrogram session string.",
@@ -32,13 +33,5 @@
         "required": true
   
        }
-    },
-    "buildpacks": [
-      {
-        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-      },
-      {
-        "url": "heroku/python"
-      }
-    ]
+    }
   }
