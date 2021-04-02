@@ -33,7 +33,7 @@ from .misc import (
 )
 
 if HEROKU:
-    from configs import SESSION_STRING
+    from .configs import SESSION_STRING
 
 if not HEROKU:
     app = Client('ktgvc', api_id=api_id, api_hash=api_hash)
