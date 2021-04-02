@@ -1,0 +1,44 @@
+
+{
+    "name": "KryPtoN-Music-Bot",
+    "description": "Tele Voice Calls Music.",
+    "keywords": [
+      "telegram",
+      "voicechat",
+      "music",
+      "python",
+      "pyrogram",
+      "callsmusic"
+    ],
+    "repository": "https://github.com/vincreator/KryPtoN-Music-Bot",
+    "env": {
+      "SESSION_STRING": {
+        "description": "A Pyrogram session string.",
+        "required": true
+  
+      },
+      "API_ID": {
+        "description": "An app ID from https://my.telegram.org/apps.",
+        "required": true
+  
+      },
+      "API_HASH": {
+        "description": "An app hash from https://my.telegram.org/apps.",
+        "required": true
+  
+      },
+      "SUDO_CHAT_ID": {
+        "description": "Chat id where your bot running.",
+        "required": true
+  
+       }
+    },
+    "buildpacks": [
+      {
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+      },
+      {
+        "url": "heroku/python"
+      }
+    ]
+  }

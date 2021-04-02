@@ -31,6 +31,8 @@ $ python3 -m krypton
 
 # Heroku 
 
+[![Heroku Badge](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Kry9toN/KryPtoN-Music-Bot/tree/master)
+
 ### Generate String session [IMPORTANT]
 Download this file [generate_string_session.py](https://raw.githubusercontent.com/Kry9toN/KryPtoN-Music-Bot/master/generate_string_session.py)
 
