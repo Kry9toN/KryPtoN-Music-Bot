@@ -66,7 +66,9 @@ Command | Description
 - [Saweria](https://saweria.co/donate/Kry9toN)
 - [Paypal](https://www.paypal.me/KomodoOS)
 
-# Credit
-[@MarshalX](https://github.com/MarshalX)
+# License
+[GPL-3.0 License](https://github.com/Kry9toN/KryPtoN-Music-Bot/blob/master/LICENSE.md) KryPtoN © 2021
 
-[@thehamkercat](https://github.com/thehamkercat)
+# Credit
+- [@MarshalX](https://github.com/MarshalX)
+- [@thehamkercat](https://github.com/thehamkercat)
