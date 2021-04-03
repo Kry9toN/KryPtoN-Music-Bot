@@ -40,11 +40,14 @@ if not HEROKU:
 else:
     app = Client(SESSION_STRING, api_id=api_id, api_hash=api_hash)
 
-group_calls = GroupCall(app, input_filename='input.raw', play_on_repeat=False, enable_logs_to_console=True)
+group_calls = GroupCall(app, play_on_repeat=False, enable_logs_to_console=True)
 cmd_filter = lambda cmd: filters.command(cmd, prefixes='/')
 
 # Arq Client
 arq = ARQ(ARQ_API)
+
+# File raw music
+raw_filename = 'input.raw'
 
 queue = []  # This is where the whole song queue is stored
 playing = False  # Tells if something is playing or not
@@ -220,6 +223,7 @@ async def deezer(requested_by, query):
         caption=f"**Playing** __**[{title}]({url})**__ **Via Deezer.**",
     )
     os.remove("final.png")
+    group_calls.input_filename = raw_filename
     await asyncio.sleep(int(songs[0]["duration"]))
     await m.delete()
     playing = False
@@ -257,6 +261,7 @@ async def jiosaavn(requested_by, query):
         photo="final.png",
     )
     os.remove("final.png")
+    group_calls.input_filename = raw_filename
     await asyncio.sleep(int(sduration))
     await m.delete()
     playing = False
@@ -302,6 +307,7 @@ async def ytplay(requested_by, query):
         photo="final.png",
     )
     os.remove("final.png")
+    group_calls.input_filename = raw_filename
     await asyncio.sleep(int(time_to_seconds(duration)))
     playing = False
     await m.delete()
