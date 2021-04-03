@@ -6,7 +6,9 @@
 Music on Voice Calls Telegram
 
 # Support
-All distro linux (windows maybe not support)
+- All distro linux (Ubuntu 18.04 and not work)
+- Windows
+- Mac
 
 # Requirements
 - Telegram API_ID and API_HASH [Get here](https://my.telegram.org/apps)
