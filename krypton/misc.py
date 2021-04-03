@@ -1,6 +1,7 @@
 HELP_TEXT = """__**I Can Play Music In The Voice Chat**__
 **/start** __To Start The bot.__
 **/help** __To Show This Message.__
+**/ping** __To Show Latency Bot.___
 **/skip** __To Skip The Current Playing Music.__
 **/play** __youtube/saavn/deezer song_name__
 **/stop** __To Stop Playing Music.__
@@ -14,10 +15,12 @@ HELP_TEXT = """__**I Can Play Music In The Voice Chat**__
 
 START_TEXT = "__**Hi I'm KryPtoN Music Bot. I will sing for you on Voice Call Telegram, Hit /help for look my features.**__"
 
-REPO_TEXT = """Source code: [Github](https://github.com/Kry9toN/KryPtoN-Music-Bot)
+REPO_TEXT = """Source code this bot 🤖
+Source code: [Github](https://github.com/Kry9toN/KryPtoN-Music-Bot)
 License: [ GPL-3.0 License](https://github.com/Kry9toN/KryPtoN-Music-Bot/blob/master/LICENSE.md)"""
 
-DONATION_TEXT = """Indonesia:
+DONATION_TEXT = """♥️Donation List♥️
+Indonesia:
 [Saweria](https://saweria.co/donate/Kry9toN)
 Internasional:
 [Paypal](https://www.paypal.me/KomodoOS)
