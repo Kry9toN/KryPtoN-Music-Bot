@@ -1,5 +1,4 @@
 *.log
-*.raw
 *.png
 krypton/__pycache__
 krypton/*session*
