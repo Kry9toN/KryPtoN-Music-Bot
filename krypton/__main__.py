@@ -64,6 +64,15 @@ async def help(_, message):
 async def repo(_, message):
     await message.reply_text(REPO_TEXT)
 
+@app.on_message(filters.text & cmd_filter('ping'))
+async def ping(_, message):
+    """ Get bot latency """
+    start = datetime.now()
+    msg = await send('`Pong!`')
+    end = datetime.now()
+    latency = (end - start).microseconds / 1000
+    await msg.edit(f"**Pong!**\n`{latency} ms`")
+
 @app.on_message(filters.text & cmd_filter('donation'))
 async def donation(_, message):
     await message.reply_text(DONATION_TEXT)
