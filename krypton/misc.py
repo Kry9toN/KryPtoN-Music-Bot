@@ -1,7 +1,7 @@
 HELP_TEXT = """__**I Can Play Music In The Voice Chat**__
 **/start** __To Start The bot.__
 **/help** __To Show This Message.__
-**/ping** __To Show Latency Bot.___
+**/ping** __To Show Latency Bot.__
 **/skip** __To Skip The Current Playing Music.__
 **/play** __youtube/saavn/deezer song_name__
 **/stop** __To Stop Playing Music.__
