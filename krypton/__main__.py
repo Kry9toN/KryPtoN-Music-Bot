@@ -67,6 +67,10 @@ async def donation(_, message):
 
 @app.on_message(filters.text & cmd_filter('join'))
 async def join(_, message):
+    global playing
+    if not playing:
+      await message.reply_text('Enter Command /play first then /join!')
+
     await group_calls.start(message.chat.id)
     await message.reply_text('Succsessfully joined!')
 
