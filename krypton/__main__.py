@@ -1,9 +1,9 @@
 import asyncio
-import datetime
 import os
 import time
 import youtube_dl
 
+from datetime import datetime
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pytgcalls import GroupCall
