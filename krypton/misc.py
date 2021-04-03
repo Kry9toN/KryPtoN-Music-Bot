@@ -1,4 +1,5 @@
 HELP_TEXT = """__**I Can Play Music In The Voice Chat**__
+
 **/start** __To Start The bot.__
 **/help** __To Show This Message.__
 **/ping** __To Show Latency Bot.__
@@ -11,6 +12,7 @@ HELP_TEXT = """__**I Can Play Music In The Voice Chat**__
 **/unmute** __To Unmute A Bot.__
 **/volume** __<1-200>__
 **/kill** __To Kill A Sevice Bot.__
+**/repo** __To Source Code This Not.__
 **/donation** __To Give Me A Coffe.__"""
 
 START_TEXT = "__**Hi I'm KryPtoN Music Bot. I will sing for you on Voice Call Telegram, Hit /help for look my features.**__"
