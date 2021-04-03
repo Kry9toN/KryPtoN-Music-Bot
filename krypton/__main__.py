@@ -40,7 +40,7 @@ if not HEROKU:
 else:
     app = Client(SESSION_STRING, api_id=api_id, api_hash=api_hash)
 
-group_calls = GroupCall(app, play_on_repeat=False, enable_logs_to_console=True)
+group_calls = GroupCall(None, path_to_log_file='')
 cmd_filter = lambda cmd: filters.command(cmd, prefixes='/')
 
 # Arq Client
@@ -70,17 +70,21 @@ async def donation(_, message):
 
 @app.on_message(filters.text & cmd_filter('join'))
 async def join(_, message):
+    if group_calls.is_connected:
+        await message.reply_text('Bot already joined!')
+        return
+    group_calls.client = app
     await group_calls.start(message.chat.id)
     await message.reply_text('Succsessfully joined!')
 
 @app.on_message(filters.text & cmd_filter('mute'))
 async def mute(_, message):
-    group_calls.set_is_mute(True)
+    group_calls.set_is_mute(is_muted=True)
     await message.reply_text('Succsessfully muted bot!')
 
 @app.on_message(filters.text & cmd_filter('unmute'))
 async def unmute(_, message):
-    group_calls.set_is_mute(False)
+    group_calls.set_is_mute(is_muted=False)
     await message.reply_text('Succsessfully unmuted bot!')
 
 @app.on_message(filters.text & cmd_filter('volume'))
@@ -88,19 +92,25 @@ async def volume(_, message):
     if len(message.command) < 2:
         await message.reply_text('You forgot to pass volume (1-200)')
 
-    await group_calls.set_my_volume(message.command[1])
+    await group_calls.set_my_volume(volume=int(message.command[1]))
     await message.reply_text(f'Volume changed to {message.command[1]}')
 
 @app.on_message(filters.text & cmd_filter('stop'))
 async def stop(_, message):
     group_calls.stop_playout()
+    queue.clear()
     playing = False
     await message.reply_text('Succsessfully stopped song!')
 
 @app.on_message(filters.text & cmd_filter('leave'))
 async def leave(_, message):
+    if not group_calls.is_connected:
+        await message.reply_text('Bot already leaved!')
+        return
     await group_calls.stop()
+    queue.clear()
     playing = False
+    group_calls.input_filename = ''
     await message.reply_text('Succsessfully leaved!')
 
 @app.on_message(filters.text & cmd_filter('kill'))
@@ -110,6 +120,9 @@ async def killbot(_, message):
 
 @app.on_message(filters.text & cmd_filter('play'))
 async def queuer(_, message):
+    if not group_calls.is_connected:
+        await message.reply_text('Bot not joined on Voice Calls!')
+        return
     usage = "**Usage:**\n__**/play youtube Song_Name**__"
     if len(message.command) < 3:
         await message.reply_text(usage)
