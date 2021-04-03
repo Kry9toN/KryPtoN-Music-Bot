@@ -51,13 +51,17 @@ Command | Description
 :--- | :---
 /start | To Start The bot.
 /help | To Show This Message.
-/ping | To Ping All Datacenters Of Telegram.
-/skip | To Skip Any Playing Music.
-/play youtube/saavn/deezer [song_name] | To Play A Song.
-/queue | To Check Queue Status.
-/join | To Join Voice Chat.
-/leave | To Leave Voice Chat.
-/donation | To Display Link Donations
+/ping | To Show Latency Bot.
+/skip | To Skip The Current Playing Music.
+/play | youtube/saavn/deezer song_name
+/stop | To Stop Playing Music.
+/join | To Join A Voice Chat.
+/leave | To Leave A Voice Chat.
+/mute | To Mute A Bot.
+/unmute | To Unmute A Bot.
+/volume | <1-200>
+/kill | To Kill A Sevice Bot.
+/donation | To Give Me A Coffe.
 
 ## To-Do
 - add moar feature
