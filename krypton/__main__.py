@@ -128,7 +128,7 @@ async def killbot(_, message):
     quit()
 
 @app.on_message(filters.text & cmd_filter('play'))
-async def queue(_, message):
+async def queues(_, message):
     if not group_calls.is_connected:
         await message.reply_text('Bot not joined on Voice Calls!')
         return
@@ -230,6 +230,7 @@ async def deezer(requested_by, query):
     except Exception as e:
         await m.edit("__**Found No Song Matching Your Query.**__")
         playing = False
+        print(str(e))
         return
     await m.edit("__**Generating Thumbnail.**__")
     await generate_cover_square(requested_by, title, artist, duration, thumbnail)
