@@ -1,10 +1,10 @@
 from pyrogram import Client as c
 
-id = input('\nEnter your Api ID: ')
-hash = input('\nEnter your Api Hash: ')
+api_id = input('\nEnter your Api ID: ')
+api_hash = input('\nEnter your Api Hash: ')
 print('\nEnter phone number if asked!!')
 
-u = c(':memory:', api_id=id, api_hash=hash)
+u = c(':memory:', api_id=api_id, api_hash=api_hash)
 
 with u:
     string = u.export_session_string()
