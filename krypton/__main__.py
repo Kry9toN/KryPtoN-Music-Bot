@@ -1,11 +1,9 @@
 import asyncio
 import os
-import time
 import youtube_dl
 
 from datetime import datetime
 from pyrogram import Client, filters
-from pyrogram.types import Message
 from pytgcalls import GroupCall
 from Python_ARQ import ARQ
 
@@ -58,7 +56,7 @@ async def start(_, message):
     await message.reply_text(START_TEXT)
 
 @app.on_message(filters.text & cmd_filter('help'))
-async def help(_, message):
+async def helps(_, message):
     await message.reply_text(HELP_TEXT)
 
 @app.on_message(filters.text & cmd_filter('repo'))
@@ -67,7 +65,6 @@ async def repo(_, message):
 
 @app.on_message(filters.text & cmd_filter('ping'))
 async def ping(_, message):
-    """ Get bot latency """
     start = datetime.now()
     msg = await send('`Pong!`')
     end = datetime.now()
@@ -107,6 +104,7 @@ async def volume(_, message):
 
 @app.on_message(filters.text & cmd_filter('stop'))
 async def stop(_, message):
+    global playing
     group_calls.stop_playout()
     queue.clear()
     playing = False
@@ -114,6 +112,7 @@ async def stop(_, message):
 
 @app.on_message(filters.text & cmd_filter('leave'))
 async def leave(_, message):
+    global playing
     if not group_calls.is_connected:
         await message.reply_text('Bot already leaved!')
         return
@@ -129,7 +128,7 @@ async def killbot(_, message):
     quit()
 
 @app.on_message(filters.text & cmd_filter('play'))
-async def queuer(_, message):
+async def queue(_, message):
     if not group_calls.is_connected:
         await message.reply_text('Bot not joined on Voice Calls!')
         return
@@ -196,7 +195,6 @@ async def play():
                     print(str(e))
                     await send(str(e))
                     playing = False
-                    pass
             elif service == "saavn":
                 playing = True
                 del queue[0]
@@ -206,7 +204,6 @@ async def play():
                     print(str(e))
                     await send(str(e))
                     playing = False
-                    pass
             elif service == "deezer":
                 playing = True
                 del queue[0]
@@ -216,7 +213,6 @@ async def play():
                     print(str(e))
                     await send(str(e))
                     playing = False
-                    pass
 
 
 # Deezer----------------------------------------------------------------------------------------
@@ -231,7 +227,7 @@ async def deezer(requested_by, query):
         thumbnail = songs[0].thumbnail
         artist = songs[0].artist
         url = songs[0].url
-    except:
+    except Exception as e:
         await m.edit("__**Found No Song Matching Your Query.**__")
         playing = False
         return
@@ -270,6 +266,7 @@ async def jiosaavn(requested_by, query):
         await m.edit("__**Found No Song Matching Your Query.**__")
         print(str(e))
         playing = False
+        print(str(e))
         return
     await m.edit("__**Processing Thumbnail.**__")
     await generate_cover_square(
