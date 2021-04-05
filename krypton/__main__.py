@@ -267,7 +267,6 @@ async def jiosaavn(requested_by, query):
         await m.edit("__**Found No Song Matching Your Query.**__")
         print(str(e))
         playing = False
-        print(str(e))
         return
     await m.edit("__**Processing Thumbnail.**__")
     await generate_cover_square(
