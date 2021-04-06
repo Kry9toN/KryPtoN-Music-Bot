@@ -13,7 +13,7 @@ Music on Voice Calls Telegram
 
 # Support
 - Python 3.7 or above
-- All distro linux (Ubuntu 18.04 and not work)
+- All distro linux (Ubuntu 18.04 not work)
 - Windows
 - Mac
 
