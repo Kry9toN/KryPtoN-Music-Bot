@@ -8,5 +8,5 @@ u = c(':memory:', api_id=api_id, api_hash=api_hash)
 
 with u:
     string = u.export_session_string()
-    print("\n HERE YOUR SESSIONS STRING, COPY AND DON'T SHARE:")
+    print("\nHERE YOUR SESSIONS STRING, COPY AND DON'T SHARE:")
     print(f'\n{string}')
