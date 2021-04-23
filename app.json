@@ -1,6 +1,6 @@
 
 {
-    "name": "KryPtoN-Music-Bot",
+    "name": "Shamil-Music-Bot",
     "description": "Tele Voice Calls Music.",
     "keywords": [
       "telegram",
@@ -10,7 +10,7 @@
       "pyrogram",
       "callsmusic"
     ],
-    "repository": "https://github.com/vincreator/KryPtoN-Music-Bot",
+    "repository": "https://github.com/shamilhabeebnelli/tgMusicBotv2",
     "stack": "container",
     "env": {
       "SESSION_STRING": {
